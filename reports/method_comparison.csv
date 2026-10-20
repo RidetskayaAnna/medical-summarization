@@ -1,0 +1,4 @@
+﻿method,rougeL_f1,critical_fact_recall,unsupported_number_examples,dataset,n_examples
+Extractive baseline,0.5992730042383899,0.6190476190476192,,test,28
+Zero-shot FLAN-T5-base,0.6242869480482947,0.7083333333333334,0.0,test,28
+Few-shot FLAN-T5-base,0.6620390129488138,0.5952380952380951,9.0,test,28
