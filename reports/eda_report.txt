@@ -1,0 +1,39 @@
+DATASET PASSPORT
+File: synthetic_medical_histories.csv
+Rows: 100
+Columns: 6
+Memory usage: 107.00 KB
+
+COLUMN TYPES
+record_id             str
+scenario              str
+source_text           str
+reference_summary     str
+critical_facts        str
+synthetic            bool
+
+MISSING VALUES
+record_id            0
+scenario             0
+source_text          0
+reference_summary    0
+critical_facts       0
+synthetic            0
+Total missing values: 0
+
+DUPLICATES
+Duplicate rows: 0
+Duplicate record IDs: 0
+Duplicate source texts: 0
+
+SCENARIO DISTRIBUTION
+                              count  percentage
+scenario                                       
+acute asthma exacerbation        24        24.0
+community-acquired pneumonia     23        23.0
+urinary tract infection          22        22.0
+migraine                         16        16.0
+acute gastroenteritis            15        15.0
+
+DATA PRIVACY CHECK
+All records marked synthetic: True
