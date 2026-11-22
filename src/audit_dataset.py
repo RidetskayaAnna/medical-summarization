@@ -1,6 +1,8 @@
 from collections import defaultdict
 from pathlib import Path
 import csv
+import re
+
 
 DATA_PATH = Path("data/raw/medical-summarization.csv")
 def main():
@@ -125,6 +127,31 @@ def main():
                 print(f"\nID: {row['id']}")
                 print(f"Эталон: {row['reference_summary']}")
 
+    print("\n--- WHITESPACE CHECK ---")
+
+    for column in ["full_history", "reference_summary"]:
+        if column in columns:
+            leading_trailing = 0
+            multiple_spaces = 0
+            tabs = 0
+
+            for row in rows:
+                value = row[column] or ""
+
+                if value != value.strip():
+                    leading_trailing += 1
+
+                if re.search(r" {2,}", value):
+                    multiple_spaces += 1
+
+                if "\t" in value:
+                    tabs += 1
+
+            print(f"\n{column}:")
+            print(f"  Пробелы в начале или конце: {leading_trailing}")
+            print(f"  Несколько пробелов подряд: {multiple_spaces}")
+            print(f"  Табуляции: {tabs}")
+    
     print("\n--- TEXT LENGTHS ---")
 
     for column in ["full_history", "reference_summary"]:
