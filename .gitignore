@@ -16,7 +16,6 @@ env/
 
 # Environment variables and secrets
 .env
-.env.*
 
 # OS
 .DS_Store
